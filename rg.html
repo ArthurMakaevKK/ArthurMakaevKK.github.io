@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    
+    
+    function common(randNum) {
+
+
+    
+var rn = Math.round(Math.random());
+if (rn == randNum.value) {
+res.value = "WIN";
+rm.value = "правиьный ответ: " + rn;
+}
+else {
+res.value = "LOSE";
+rm.value = "правиьный ответ: " + rn;
+}
+
+
+var elems = document.querySelectorAll('*');
+for (let elem of elems){
+if (rn == randNum.value){
+elem.style.borderColor='yellowgreen';
+}
+
+else{
+elem.style.borderColor='red';
+
+}
+
+}
+
+
+}
+
+    </script>
+    <input type="text">
+
+
+    <input type="button" value="0" onclick="common(this)">
+
+    <input type="button" value="1" onclick="common(this)">
+    <input type="text" id=res>
+
+    <input type="text" id=rm>
+</body>
+</html>
