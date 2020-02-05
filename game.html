@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    .we{
+        background-color: darkmagenta;
+        position: absolute;
+        width: 100px;
+        height: 100px;
+    }
+    body{
+        height: 100vh;
+    }
+    
+    </style>
+</head>
+<body onload="">
+    <script>
+
+document.getElementById("we").addEventListener("click", function(){
+  alert("event");
+}); 
+        function up(){
+            prompt("aa");
+            var sc=parseInt( document.getElementById("res"));
+            
+            document.getElementById("res").innerHTML=sc;
+            
+        }
+    function move(){
+        var elems=document.getElementsByClassName("we");
+        
+        
+        for(let elem of elems){
+            sleep(1000);
+            var rx=Math.round(Math.random()*document.body.clientWidth);
+            var ry=Math.round(Math.random()*document.body.clientHeight);
+            elem.style.left=rx+"px";
+            elem.style.top=ry+"px";
+            
+        }
+    }
+    function sleep(ms) {
+ms += new Date().getTime();
+while (new Date() < ms){}
+} 
+    
+    </script>
+    <div id="res">0</div>
+    <input type="text" class="we" ontouchstart="up()" id="we">
+</body>
+</html>
